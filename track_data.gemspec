@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = TrackData::VERSION
   spec.authors       = ["Drew"]
   spec.email         = ["andrew.bisset@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Read flat files of track data}
+  spec.description   = %q{Parses flat files and returns structured data}
   spec.homepage      = ""
   spec.license       = "MIT"
 
