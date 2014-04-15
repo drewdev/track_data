@@ -1,6 +1,12 @@
 # TrackData
 
-TODO: Write a gem description
+Supports reading track data exported from iTunes flat files and
+converting it into structured data. 
+
+For now, TrackData only supports plain text data exports as a source
+format. It builds them into loosely structured hashes where the
+resulting keys are only preserved if they have corresponding values.
+This structure makes them suitable for document-based persistence.
 
 ## Installation
 
@@ -18,7 +24,28 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To read in a plain text file exported from iTunes, build an instance of
+Pathname from the path to the file:
+
+```ruby
+pathname = Pathname.new('path/to/file.txt')
+```
+
+Then pass this to TrackData::FromPlainText and call the process method
+on the resulting instance:
+
+```ruby
+from_plain_text = TrackData::FromPlainText.use(pathname)
+from_plain_text.process
+```
+
+The data can then be inspected in its raw form or in the loosely
+structured form by calling the appropriate accessors:
+
+```ruby
+from_plain_text.raw
+from_plain_text.track_data
+```
 
 ## Contributing
 
