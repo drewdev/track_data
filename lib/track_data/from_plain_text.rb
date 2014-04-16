@@ -38,6 +38,7 @@ module TrackData
     end
 
     def native?
+      true
     end
   end
 end
