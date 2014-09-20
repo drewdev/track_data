@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe TrackData::FromPlainText do
-  let(:from_plain_text) { TrackData::FromPlainText.new(plain_text_pathname) }
+describe Traktion::FromPlainText do
+  let(:from_plain_text) { Traktion::FromPlainText.new(plain_text_pathname) }
   let(:plain_text_pathname) { Pathname.new("spec/fixtures/files/itunes_plain_text.txt") }
 
   describe '.use' do
-    subject { TrackData::FromPlainText.use(plain_text_pathname) }
+    subject { Traktion::FromPlainText.use(plain_text_pathname) }
 
     it 'returns an instace with the pathname loaded' do
       expect(subject.pathname).to eq(plain_text_pathname)
@@ -22,7 +22,7 @@ describe TrackData::FromPlainText do
       end
 
       it 'should be true' do
-        expect(subject).to be_true
+        expect(subject).to be_truthy
       end
     end
 
@@ -35,7 +35,7 @@ describe TrackData::FromPlainText do
       end
 
       it 'should be true' do
-        expect(subject).to be_true
+        expect(subject).to be_truthy
       end
     end
 
@@ -48,7 +48,7 @@ describe TrackData::FromPlainText do
       end
 
       it 'should be false' do
-        expect(subject).to be_false
+        expect(subject).to be_falsey
       end
     end
 
@@ -61,7 +61,7 @@ describe TrackData::FromPlainText do
       end
 
       it 'should be false' do
-        expect(subject).to be_false
+        expect(subject).to be_falsey
       end
     end
 
@@ -74,7 +74,7 @@ describe TrackData::FromPlainText do
       end
 
       it 'should be false' do
-        expect(subject).to be_false
+        expect(subject).to be_falsey
       end
     end
   end
@@ -92,7 +92,7 @@ describe TrackData::FromPlainText do
     end
 
     it 'should be true' do
-      expect(subject).to be_true
+      expect(subject).to be_truthy
     end
 
     it 'assigns the parsed result to raw' do
@@ -113,7 +113,7 @@ describe TrackData::FromPlainText do
     end
 
     it 'should be true' do
-      expect(subject).to be_true
+      expect(subject).to be_truthy
     end
 
     it 'assigns the prepared result to track_data' do

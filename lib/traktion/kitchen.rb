@@ -1,4 +1,4 @@
-module TrackData
+module Traktion
   class Kitchen
     attr_reader :data
 

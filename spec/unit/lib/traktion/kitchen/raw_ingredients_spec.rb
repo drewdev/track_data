@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe TrackData::Kitchen::RawIngredients do
-  let(:raw_ingredients) { TrackData::Kitchen::RawIngredients.new(unstructured) }
+describe Traktion::Kitchen::RawIngredients do
+  let(:raw_ingredients) { Traktion::Kitchen::RawIngredients.new(unstructured) }
   let(:unstructured) { [ ["field-1", "field-2"], ["row-1.1", "row-1.2"], [ "row-2.1", "row-2.2"] ] }
 
   describe '.from' do
     it 'returns an instance of raw ingredients' do
-      expect(TrackData::Kitchen::RawIngredients.from(unstructured)).to be_an_instance_of(TrackData::Kitchen::RawIngredients)
+      expect(Traktion::Kitchen::RawIngredients.from(unstructured)).to be_an_instance_of(Traktion::Kitchen::RawIngredients)
     end
   end
 

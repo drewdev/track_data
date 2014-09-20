@@ -1,13 +1,15 @@
 require 'spec_helper'
 
-describe TrackData::FromPlainText do
-  let(:from_plain_text) { TrackData::FromPlainText.use(plain_text_pathname) }
+describe Traktion::FromPlainText do
+  let(:from_plain_text) { Traktion::FromPlainText.use(plain_text_pathname) }
   let(:plain_text_pathname) { Pathname.new("spec/fixtures/files/itunes_plain_text.txt") }
 
   describe '#process' do
     subject { from_plain_text.process }
 
-    it { should be_true }
+    it 'returns true' do
+      expect(subject).to be_truthy
+    end
   end
 
   describe '#track_data' do
@@ -24,6 +26,8 @@ describe TrackData::FromPlainText do
 
     subject { from_plain_text.track_data }
 
-    it { should == track_data }
+    it 'returns the expected track data' do
+      expect(subject).to eq(track_data)
+    end
   end
 end

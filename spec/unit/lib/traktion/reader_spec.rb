@@ -1,14 +1,14 @@
 require 'spec_helper'
 require 'tempfile'
 
-describe TrackData::Reader do
+describe Traktion::Reader do
   let(:pathname) { Pathname.new('path/to/the/file') }
 
   describe '.for' do
-    subject { TrackData::Reader.for(pathname) }
+    subject { Traktion::Reader.for(pathname) }
 
-    it 'returns an instance of TrackData::Reader' do
-      expect(subject).to be_an_instance_of TrackData::Reader
+    it 'returns an instance of Traktion::Reader' do
+      expect(subject).to be_an_instance_of Traktion::Reader
     end
 
     it 'sets the path' do
@@ -17,7 +17,7 @@ describe TrackData::Reader do
   end
 
   describe '#use' do
-    let(:reader) { TrackData::Reader.new(pathname) }
+    let(:reader) { Traktion::Reader.new(pathname) }
     let(:strategy) { double('strategy') }
 
     subject { reader.use(strategy) }
@@ -31,7 +31,7 @@ describe TrackData::Reader do
   describe '#data' do
     let(:file_double) { Tempfile.new('fake.txt') }
     let(:pathname) { Pathname.new(file_double.path) }
-    let(:reader) { TrackData::Reader.new(pathname) }
+    let(:reader) { Traktion::Reader.new(pathname) }
 
     subject { reader.data }
 
@@ -51,13 +51,13 @@ describe TrackData::Reader do
   end
 
   describe '#parse' do
-    let(:reader) { TrackData::Reader.new(pathname) }
+    let(:reader) { Traktion::Reader.new(pathname) }
     let(:data) { "raw\ttext" }
 
     subject { reader.parse }
 
     before do
-      reader.stub(:data).and_return(data)
+      allow(reader).to receive(:data).and_return(data)
     end
 
     it 'calls parse on the strategy' do
@@ -67,14 +67,14 @@ describe TrackData::Reader do
   end
 
   describe '#parser' do
-    let(:reader) { TrackData::Reader.new(pathname) }
-    let(:strategy) { TrackData::Strategy::PlainText }
+    let(:reader) { Traktion::Reader.new(pathname) }
+    let(:strategy) { Traktion::Strategy::PlainText }
 
     subject { reader.parser }
 
     context 'with a supplied strategy' do
       before do
-        reader.stub(:strategy).and_return(strategy)
+        allow(reader).to receive(:strategy).and_return(strategy)
       end
 
       it 'returns an instance the strategy' do
@@ -84,7 +84,7 @@ describe TrackData::Reader do
 
     context 'with no supplied strategy' do
       it 'returns a nil strategy' do
-        expect(subject).to eq(TrackData::Strategy::Nil)
+        expect(subject).to eq(Traktion::Strategy::Nil)
       end
     end
   end

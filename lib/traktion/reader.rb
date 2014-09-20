@@ -1,4 +1,4 @@
-module TrackData
+module Traktion
   class Reader
     attr_accessor :strategy
     attr_reader :pathname
@@ -24,7 +24,7 @@ module TrackData
     end
 
     def parser
-      strategy || ::TrackData::Strategy::Nil
+      strategy || ::Traktion::Strategy::Nil
     end
   end
 end

@@ -1,4 +1,4 @@
-require 'track_data'
+require 'traktion'
 
 RSpec.configure do |config|
 end
