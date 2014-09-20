@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'track_data/version'
+require 'traktion/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "track_data"
-  spec.version       = TrackData::VERSION
-  spec.authors       = ["Drew"]
+  spec.name          = "traktion"
+  spec.version       = Traktion::VERSION
+  spec.authors       = ["Drew Bisset"]
   spec.email         = ["andrew.bisset@gmail.com"]
-  spec.summary       = %q{Read flat files of track data}
-  spec.description   = %q{Parses flat files and returns structured data}
-  spec.homepage      = ""
+  spec.summary       = %q{Provides some silly utilities for working with iTuens metadata.}
+  spec.description   = %q{}
+  spec.homepage      = "http://github.com/drewdev/traktion"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.6"
-  spec.add_development_dependency "rake"
+  spec.add_development_dependency "bundler", "~> 1.7"
+  spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec"
 end
