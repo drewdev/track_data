@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe TrackData::Kitchen do
-  let(:kitchen) { TrackData::Kitchen.with(data) }
-  let(:chef_class) { TrackData::Kitchen::Chef }
-  let(:savory_headers_class) { TrackData::Kitchen::SavoryHeaders }
-  let(:raw_ingredients_class) { TrackData::Kitchen::RawIngredients }
+describe Traktion::Kitchen do
+  let(:kitchen) { Traktion::Kitchen.with(data) }
+  let(:chef_class) { Traktion::Kitchen::Chef }
+  let(:savory_headers_class) { Traktion::Kitchen::SavoryHeaders }
+  let(:raw_ingredients_class) { Traktion::Kitchen::RawIngredients }
   let(:data) { double(:data) }
 
   describe '#headers' do

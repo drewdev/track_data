@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe TrackData::FromPlainText do
-  let(:from_plain_text) { TrackData::FromPlainText.new(plain_text_pathname) }
+describe Traktion::FromPlainText do
+  let(:from_plain_text) { Traktion::FromPlainText.new(plain_text_pathname) }
   let(:plain_text_pathname) { Pathname.new("spec/fixtures/files/itunes_plain_text.txt") }
 
   describe '.use' do
-    subject { TrackData::FromPlainText.use(plain_text_pathname) }
+    subject { Traktion::FromPlainText.use(plain_text_pathname) }
 
     it 'returns an instace with the pathname loaded' do
       expect(subject.pathname).to eq(plain_text_pathname)

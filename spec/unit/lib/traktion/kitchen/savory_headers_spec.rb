@@ -1,14 +1,14 @@
 require 'spec_helper'
 
-describe TrackData::Kitchen::SavoryHeaders do
+describe Traktion::Kitchen::SavoryHeaders do
   let(:uglies) { ["This Field", "ThatField" ] }
-  let(:savory_headers) { TrackData::Kitchen::SavoryHeaders.new(uglies) }
+  let(:savory_headers) { Traktion::Kitchen::SavoryHeaders.new(uglies) }
 
   describe '.from' do
     let(:savories) { [:this_field, :thatfield ] }
 
     it 'receives the uglies and returns the savory headers' do
-      expect(TrackData::Kitchen::SavoryHeaders.from(uglies)).to eq(savories)
+      expect(Traktion::Kitchen::SavoryHeaders.from(uglies)).to eq(savories)
     end
   end
 

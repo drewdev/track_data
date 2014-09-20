@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe TrackData::FromPlainText do
-  let(:from_plain_text) { TrackData::FromPlainText.use(plain_text_pathname) }
+describe Traktion::FromPlainText do
+  let(:from_plain_text) { Traktion::FromPlainText.use(plain_text_pathname) }
   let(:plain_text_pathname) { Pathname.new("spec/fixtures/files/itunes_plain_text.txt") }
 
   describe '#process' do

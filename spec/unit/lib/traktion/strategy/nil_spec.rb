@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe TrackData::Strategy::Nil do
+describe Traktion::Strategy::Nil do
   let(:data) { nil }
 
-  subject { TrackData::Strategy::Nil }
+  subject { Traktion::Strategy::Nil }
 
   it 'should respond to parse' do
     expect(subject).to respond_to(:parse).with(1).argument

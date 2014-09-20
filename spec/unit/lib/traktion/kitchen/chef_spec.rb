@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe TrackData::Kitchen::Chef do
-  let(:chef) { TrackData::Kitchen::Chef.cook(seasoning, filets) }
+describe Traktion::Kitchen::Chef do
+  let(:chef) { Traktion::Kitchen::Chef.cook(seasoning, filets) }
   let(:filets) { double(:filets) }
   let(:seasoning) { double(:seasoning) }
 

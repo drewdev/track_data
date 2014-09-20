@@ -1,6 +1,6 @@
 require 'delegate'
 
-module TrackData
+module Traktion
   module Strategy
     class PlainText < SimpleDelegator
       def self.parse(data)

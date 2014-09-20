@@ -4,7 +4,7 @@ module StringExtensions
   end
 end
 
-module TrackData
+module Traktion
   class Kitchen
     class Chef
       using StringExtensions

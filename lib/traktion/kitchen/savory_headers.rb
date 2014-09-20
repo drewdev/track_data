@@ -1,4 +1,4 @@
-module TrackData
+module Traktion
   class Kitchen
     class SavoryHeaders
       attr_accessor :headers

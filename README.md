@@ -1,9 +1,9 @@
-# TrackData
+# Traktion
 
 Supports reading track data exported from iTunes flat files and
 converting it into structured data. 
 
-For now, TrackData only supports plain text data exports as a source
+For now, Traktion only supports plain text data exports as a source
 format. It builds them into loosely structured hashes where the
 resulting keys are only preserved if they have corresponding values.
 This structure makes them suitable for document-based persistence.
@@ -31,11 +31,11 @@ Pathname from the path to the file:
 pathname = Pathname.new('path/to/file.txt')
 ```
 
-Then pass this to TrackData::FromPlainText and call the process method
+Then pass this to Traktion::FromPlainText and call the process method
 on the resulting instance:
 
 ```ruby
-from_plain_text = TrackData::FromPlainText.use(pathname)
+from_plain_text = Traktion::FromPlainText.use(pathname)
 from_plain_text.process
 ```
 

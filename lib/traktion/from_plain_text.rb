@@ -1,4 +1,4 @@
-module TrackData
+module Traktion
   class FromPlainText
     attr_accessor :errors
     attr_accessor :raw
