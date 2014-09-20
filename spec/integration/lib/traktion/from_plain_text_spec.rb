@@ -7,7 +7,9 @@ describe Traktion::FromPlainText do
   describe '#process' do
     subject { from_plain_text.process }
 
-    it { should be_true }
+    it 'returns true' do
+      expect(subject).to be_truthy
+    end
   end
 
   describe '#track_data' do
@@ -24,6 +26,8 @@ describe Traktion::FromPlainText do
 
     subject { from_plain_text.track_data }
 
-    it { should == track_data }
+    it 'returns the expected track data' do
+      expect(subject).to eq(track_data)
+    end
   end
 end

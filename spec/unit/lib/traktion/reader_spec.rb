@@ -57,7 +57,7 @@ describe Traktion::Reader do
     subject { reader.parse }
 
     before do
-      reader.stub(:data).and_return(data)
+      allow(reader).to receive(:data).and_return(data)
     end
 
     it 'calls parse on the strategy' do
@@ -74,7 +74,7 @@ describe Traktion::Reader do
 
     context 'with a supplied strategy' do
       before do
-        reader.stub(:strategy).and_return(strategy)
+        allow(reader).to receive(:strategy).and_return(strategy)
       end
 
       it 'returns an instance the strategy' do

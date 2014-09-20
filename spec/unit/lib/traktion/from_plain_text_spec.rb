@@ -22,7 +22,7 @@ describe Traktion::FromPlainText do
       end
 
       it 'should be true' do
-        expect(subject).to be_true
+        expect(subject).to be_truthy
       end
     end
 
@@ -35,7 +35,7 @@ describe Traktion::FromPlainText do
       end
 
       it 'should be true' do
-        expect(subject).to be_true
+        expect(subject).to be_truthy
       end
     end
 
@@ -48,7 +48,7 @@ describe Traktion::FromPlainText do
       end
 
       it 'should be false' do
-        expect(subject).to be_false
+        expect(subject).to be_falsey
       end
     end
 
@@ -61,7 +61,7 @@ describe Traktion::FromPlainText do
       end
 
       it 'should be false' do
-        expect(subject).to be_false
+        expect(subject).to be_falsey
       end
     end
 
@@ -74,7 +74,7 @@ describe Traktion::FromPlainText do
       end
 
       it 'should be false' do
-        expect(subject).to be_false
+        expect(subject).to be_falsey
       end
     end
   end
@@ -92,7 +92,7 @@ describe Traktion::FromPlainText do
     end
 
     it 'should be true' do
-      expect(subject).to be_true
+      expect(subject).to be_truthy
     end
 
     it 'assigns the parsed result to raw' do
@@ -113,7 +113,7 @@ describe Traktion::FromPlainText do
     end
 
     it 'should be true' do
-      expect(subject).to be_true
+      expect(subject).to be_truthy
     end
 
     it 'assigns the prepared result to track_data' do
